@@ -33,10 +33,21 @@ export default function TableList() {
         <td>{client.job}</td>
         <td>{client.rate}</td>
         <td>
-{/* Suggested code may be subject to a license. Learn more: ~LicenseLog:2652040894. */}
-            <button className="btn btn-xs ${client.isactive ? btn-success : btn-error}">Hola Mundo</button>
+          <button className={`btn ${client.isactive ? 'btn-primary' : 'btn-outline-primary'}`}>
+              {client.isactive ? 'Active' : 'Inactive'}
+          </button>
         </td>
-      </tr>
+        <td>           
+          <button className="btn btn-secondary">
+              Update
+          </button>
+        </td>
+        <td>
+        <button className="btn btn-error">
+            Delete
+          </button>
+        </td>
+        </tr>
       ))}
     </tbody>
   </table>
